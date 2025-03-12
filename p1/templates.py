@@ -13,5 +13,3 @@ def get_answer(current_answer, user_answer):
     else:
         print(user_answer, "is wrong answer ;(. Correct answer was", current_answer, ".")
         return False
-
-   
