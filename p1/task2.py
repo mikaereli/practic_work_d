@@ -1,11 +1,10 @@
 import random
+from templates import get_username, get_answer
 
-print("Welcome to the Brain Games!\nMay I have your name?")
-user_name = str(input())
-print(f"Hello, {user_name}!")
+user_name = get_username()
 print("What number is missing in the progression?")
-
-while True:
+flag = True
+while flag:
     length = random.randint(5, 10)
     numbers = [0] * length
     q = random.randint(2, 7)
@@ -27,8 +26,4 @@ while True:
     print()
     print("Your answer:")
     user_answer = int(input())
-    if user_answer == numbers[hiden]:
-        print("Correct!")
-    else:
-        print(user_answer, "is wrong answer ;(. Correct answer was", numbers[hiden], ".")
-        break
+    flag = get_answer(numbers[hiden], user_answer)
